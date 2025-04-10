@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אשף המשחקים</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>אשף המשחקים</h1>
+        
+        <!-- שלב 1: בחירת שם משחק ומספר השדות -->
+        <div id="step1" class="game-step active">
+            <h2>שלב 1: הגדרת המשחק</h2>
+            <form id="numFieldsForm">
+                <div class="form-group">
+                    <label for="gameName">שם המשחק:</label>
+                    <input type="text" id="gameName" name="gameName" required>
+                </div>
+                <div class="form-group">
+                    <label for="numFields">מספר פריטים:</label>
+                    <select id="numFields" name="numFields">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">המשך</button>
+            </form>
+        </div>
+        
+        <!-- שלב 2: מילוי הטקסטים וסימון הצ'ק בוקסים -->
+        <div id="step2" class="game-step">
+            <h2>שלב 2: מלא את הפריטים וסמן את אלה שיש לזכור</h2>
+            <form id="textFieldsForm">
+                <div id="textFields" class="text-fields-container">
+                    <!-- כאן יתווספו שדות הטקסט והצ'ק בוקסים באמצעות JavaScript -->
+                </div>
+                <button type="submit" class="btn">צור משחק</button>
+            </form>
+        </div>
+        
+        <!-- שלב 3: המשחק עצמו -->
+        <div id="step3" class="game-step">
+            <h2>שלב 3: לחץ על הפריטים שיש לזכור</h2>
+            <div id="gameInfo" class="game-info">
+                <!-- כאן יופיע מידע על המשחק כולל הלינק -->
+            </div>
+            <div id="gameItems" class="game-items-container">
+                <!-- כאן יתווספו הפריטים למשחק באמצעות JavaScript -->
+            </div>
+            <div class="game-controls">
+                <button id="checkBtn" class="btn">בדיקה</button>
+                <button id="resetBtn" class="btn" style="display: none;">נסה שוב</button>
+                <button id="newGameBtn" class="btn" style="display: none;">משחק חדש</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
